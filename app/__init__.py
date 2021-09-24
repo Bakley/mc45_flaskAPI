@@ -9,7 +9,7 @@ def create_app(config_name):
     app.config.from_object(app_config[config_name])
 
     with app.app_context():
-        Bball_Db.init_db(app_config.get['DATABASE_URI'])
+        Bball_Db.init_db(app_config.get('DATABASE_URI'))
         Bball_Db.build_tables()
 
     app.register_blueprint(version1)

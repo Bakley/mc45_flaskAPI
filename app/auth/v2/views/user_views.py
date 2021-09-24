@@ -1,3 +1,4 @@
+from pdb import set_trace
 from flask_restful import Resource, reqparse
 from app.auth.v2.models.user_models import UserModel
 
@@ -11,6 +12,10 @@ class UserRegister(Resource):
     parser = reqparse.RequestParser()
     parser.add_argument("email", type=str, required=True, help="Please input an email")
     parser.add_argument("username", type=str, required=True, help="Please input your name")
+    parser.add_argument("password", type=str, required=True, help="Please input your password")
+    parser.add_argument("confirm_password", type=str, required=True, help="Please confirm your password")
+
+
 
     def post(self):
         """
